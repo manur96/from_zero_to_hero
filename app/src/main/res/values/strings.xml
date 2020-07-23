@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Tutorial</string>
+    <string name="languages">English · Català · </string>
+    <string name="login">Inciar sesión</string>
+    <string name="back_description">Fondo azul</string>
+    <string name="icon_description">Icono Facebook</string>
+    <string name="more">Más...</string>
+    <string name="email">Teléfono o correo electónico</string>
+    <string name="password">Contraseña</string>
+    <string name="new_account">Crear cuenta de Facebook</string>
+    <string name="forgotten_password">¿Has olvidado tu contraseña?</string>
+    <string name="or">O</string>
+    <string name="welcome">"Bienvenido, "</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Tutorial</string>
+    <string name="languages">English · Català ·</string>
+    <string name="login">Log in</string>
+    <string name="back_description">Blue background</string>
+    <string name="icon_description">Facebook icon</string>
+    <string name="more">More...</string>
+    <string name="email">Telephone or e-mail</string>
+    <string name="password">Password</string>
+    <string name="new_account">Create Facebook account</string>
+    <string name="forgotten_password">Have you forgotten your password?</string>
+    <string name="or">Or</string>
+    <string name="welcome">Welcome,</string>
+</resources>

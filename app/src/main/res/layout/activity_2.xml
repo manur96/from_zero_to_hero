@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:layout_width="@dimen/back_width"
+        android:layout_height="@dimen/back_height"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/back"
+        android:id="@+id/background"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:contentDescription="@string/back_description" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/icon_height"
+        android:src="@mipmap/fb"
+        android:id="@+id/icon"
+        app:layout_constraintEnd_toEndOf="@id/background"
+        app:layout_constraintStart_toStartOf="@id/background"
+        app:layout_constraintTop_toTopOf="@id/background"
+        app:layout_constraintBottom_toBottomOf="@id/background"
+        android:scaleType="centerInside"
+        android:contentDescription="@string/icon_description" />
+
+    <TextView
+        android:id="@+id/languages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Texto de backend"
+        android:text="@string/languages"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/background"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/more"
+        app:layout_constraintStart_toEndOf="@id/languages"
+        app:layout_constraintTop_toBottomOf="@id/background"
+        app:layout_constraintLeft_toRightOf="@id/languages"
+        android:gravity="center" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/email"
+        app:layout_constraintTop_toBottomOf="@id/languages"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="28dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/email" />
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/password"
+        app:layout_constraintTop_toBottomOf="@id/email"
+        app:layout_constraintStart_toStartOf="@id/email"
+        app:layout_constraintEnd_toEndOf="@id/email"
+        android:layout_marginTop="16dp"
+        android:hint="@string/password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/login"
+        app:layout_constraintTop_toBottomOf="@id/password"
+        app:layout_constraintStart_toStartOf="@id/password"
+        app:layout_constraintEnd_toEndOf="@id/password"
+        android:layout_marginTop="16dp"
+        android:text="@string/login"
+        android:textColor="@color/loginText"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-black"
+        android:background="@drawable/round_button" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/forgottenPass"
+        app:layout_constraintTop_toBottomOf="@id/login"
+        app:layout_constraintStart_toStartOf="@id/login"
+        app:layout_constraintEnd_toEndOf="@id/login"
+        android:layout_marginTop="16dp"
+        android:text="@string/forgotten_password"
+        android:textColor="@color/colorPrimary"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-black"
+        android:background="@null" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/or"
+        android:id="@+id/O"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/forgottenPass"
+        android:layout_marginTop="38dp"
+        android:gravity="center" />
+
+    <View
+        android:layout_width="146dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toTopOf="@id/O"
+        app:layout_constraintBottom_toBottomOf="@id/O"
+        app:layout_constraintLeft_toLeftOf="@id/forgottenPass" />
+
+    <View
+        android:layout_width="146dp"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintTop_toTopOf="@id/O"
+        app:layout_constraintBottom_toBottomOf="@id/O"
+        app:layout_constraintRight_toRightOf="@id/forgottenPass" />
+
+    <Button
+        android:layout_width="242dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/newAccount"
+        app:layout_constraintTop_toBottomOf="@id/O"
+        app:layout_constraintStart_toStartOf="@id/login"
+        app:layout_constraintEnd_toEndOf="@id/login"
+        android:layout_marginTop="38dp"
+        android:text="@string/new_account"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        android:fontFamily="sans-serif-black"
+        android:background="@drawable/round_button_green" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

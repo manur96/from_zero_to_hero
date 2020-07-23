@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="icon_height">100dp</dimen>
+    <dimen name="back_width">437dp</dimen>
+    <dimen name="back_height">237dp</dimen>
+    <dimen name="margin_top_second_screen">20dp</dimen>
+    <dimen name="text_size_second_screen">20sp</dimen>
+</resources>
