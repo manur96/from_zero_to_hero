@@ -6,4 +6,5 @@
     <color name="loginText">#AEE6FD</color>
     <color name="newAccount">#0EA529</color>
     <color name="white">#FFFFFF</color>
+    <color name="greyBack">#C6C6C6</color>
 </resources>

@@ -12,22 +12,40 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp">
+        android:layout_marginTop="16dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/profile"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="3dp"
+                android:src="@drawable/ic_profile"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/username"
+                android:text="Usuario de prueba"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/profile"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"
+                android:layout_marginLeft="5dp"
+                />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/description"
-                android:text="Esto es un texto de prueba para ver que tal puedo colocar la descripcion del post vaya"
-                app:layout_constraintTop_toTopOf="parent"
+                android:text="Texto de prueba"
+                app:layout_constraintBottom_toTopOf="@id/post_photo"
+                app:layout_constraintTop_toBottomOf="@id/username"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="12dp"
                 />
@@ -39,11 +57,41 @@
                 android:id="@+id/post_photo"
                 android:src="@mipmap/camping"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
                 app:layout_constraintTop_toBottomOf="@id/description"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 android:contentDescription="@string/back_description" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:id="@+id/line"
+                android:background="@android:color/darker_gray"
+                android:layout_marginTop="16dp"
+                app:layout_constraintTop_toBottomOf="@id/post_photo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/like"
+                android:text="Me gusta"
+                app:layout_constraintTop_toBottomOf="@id/line"
+                app:layout_constraintStart_toEndOf="@id/likeImg"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="10dp"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/likeImg"
+                android:src="@drawable/ic_like"
+                app:layout_constraintTop_toBottomOf="@id/line"
+                app:layout_constraintBottom_toBottomOf="@id/like"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="18dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="10dp"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

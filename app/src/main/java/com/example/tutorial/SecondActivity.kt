@@ -11,12 +11,13 @@ class SecondActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.second_screen)
 
-       //showEmail()
+        //showEmail()
 
         val postList = generatePosts()
 
         rv.adapter = RVAdapter(postList)
-        rv.layoutManager = LinearLayoutManager(this);
+        rv.layoutManager = LinearLayoutManager(this)
+        rv.setHasFixedSize(true)
 
     }
 
@@ -25,9 +26,35 @@ class SecondActivity : Activity() {
         hello_user.text = mail?.split("@")?.get(0)
     }*/
 
-    private fun generatePosts(): List<Post>{
+    private fun generatePosts(): List<Post> {
         var post = ArrayList<Post>()
-        post.add(Post("Hola buenas estuve en este camping el otro dia y me encanto jejejej muy comodo", 32))
+        post.add(
+            Post(
+                "David",
+                "Hola buenas estuve en un camping el otro dia y me encanto jejejej muy comodo",
+                R.drawable.ic_launcher_background
+            )
+        )
+        post.add(
+            Post(
+                "Juan", "Yo estuve en la playa este fin de semana y genial :)",
+                R.drawable.ic_launcher_background
+            )
+        )
+        post.add(
+            Post(
+                "Laura", "Ayer salí a dar un paseo por la montaña jejejeje",
+                R.drawable.ic_launcher_background
+            )
+        )
+
+        post.add(
+            Post(
+                "Pedro", "Estuve esta mañana en la playa viendo el amanecer. Que bonito!",
+                R.drawable.ic_launcher_background
+            )
+        )
+
         return post
     }
 }
