@@ -2,7 +2,9 @@ package com.example.tutorial
 
 import android.app.Activity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.post.*
 import kotlinx.android.synthetic.main.second_screen.*
 
 class SecondActivity : Activity() {
@@ -11,14 +13,11 @@ class SecondActivity : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.second_screen)
 
-        //showEmail()
-
         val postList = generatePosts()
 
         rv.adapter = RVAdapter(postList)
         rv.layoutManager = LinearLayoutManager(this)
         rv.setHasFixedSize(true)
-
     }
 
 /*    private fun showEmail() {
@@ -56,5 +55,11 @@ class SecondActivity : Activity() {
         )
 
         return post
+    }
+
+    private fun changeColor() {
+        if(like.callOnClick()){
+            Toast.makeText(baseContext, "He dado me gusta a ", Toast.LENGTH_SHORT).show()
+        }
     }
 }

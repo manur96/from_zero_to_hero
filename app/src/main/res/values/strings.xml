@@ -11,4 +11,6 @@
     <string name="forgotten_password">¿Has olvidado tu contraseña?</string>
     <string name="or">O</string>
     <string name="welcome">"Bienvenido, "</string>
+    <string name="like">Me gusta</string>
+    <string name="comment">Comentar</string>
 </resources>
