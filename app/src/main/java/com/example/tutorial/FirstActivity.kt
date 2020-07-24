@@ -4,13 +4,13 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_2.*
+import kotlinx.android.synthetic.main.activity_log_in.*
 
 class FirstActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_2)
+        setContentView(R.layout.activity_log_in)
 
         login.setOnClickListener {
             sendMessage()
