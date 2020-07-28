@@ -9,7 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_post.view.*
 
 
-class RVAdapter(private val postList: List<PostActivity>, private val onItemClick: (PostActivity) -> Unit) :
+class RVAdapter(
+    private val postList: MutableList<PostView> = mutableListOf(),
+    private val onLikeClick: (PostView) -> Unit,
+    private val onCommentClick: (PostView) -> Unit
+) :
     RecyclerView.Adapter<RVAdapter.PostViewHolder>() {
 
     override fun onBindViewHolder(holder: PostViewHolder, position: Int) =
@@ -17,30 +21,45 @@ class RVAdapter(private val postList: List<PostActivity>, private val onItemClic
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.activity_post, parent, false)
-        return PostViewHolder(itemView){
-            onItemClick(postList[it])
-            itemView.like.setTextColor(Color.parseColor("#03DAC5"))
-        }
+        val itemView =
+            LayoutInflater.from(parent.context).inflate(R.layout.activity_post, parent, false)
+        return PostViewHolder(itemView,
+            {onLikeClick(postList[it])},
+            {onCommentClick(postList[it])})
     }
 
     override fun getItemCount(): Int = postList.size
 
-    //Intentar cambiar la vista (Azul el Me gusta)
-    //Al clickar poner como Me gusta el modelo y cambiar la vista
+    fun addAll(posts: List<PostView>) {
+        postList.addAll(posts)
+        notifyDataSetChanged()
+    }
 
-    class PostViewHolder(itemView: View, private val onItemClick: (Int) -> Unit = {}) : RecyclerView.ViewHolder(itemView) {
+    fun add(post: PostView){
+        postList.add(post)
+        notifyDataSetChanged()
+    }
 
+    class PostViewHolder(
+        itemView: View,
+        private val onLikeClick: (Int) -> Unit = {},
+        private val onCommentClick: (Int) -> Unit = {}
+    ) :
+        RecyclerView.ViewHolder(itemView) {
         init {
-            itemView.like.setOnClickListener{ onItemClick(adapterPosition) }
-            itemView.comment.setOnClickListener{ onItemClick(adapterPosition) }
+            itemView.like.setOnClickListener { onLikeClick(adapterPosition) }
+            itemView.comment.setOnClickListener { onCommentClick(adapterPosition) }
         }
 
-        fun bind(postActivity: PostActivity) {
-            itemView.username.text = postActivity.user
-            itemView.description.text = postActivity.description
-            itemView.postPhoto.setImageResource(postActivity.idPhoto)
-            //itemView.like.setOnClickListener{ onItemClick(adapterPosition) }
+        fun bind(postView: PostView) {
+            itemView.username.text = postView.user
+            itemView.description.text = postView.description
+            itemView.postPhoto.setImageResource(postView.idPhoto)
+            if (postView.isLiked) {
+                itemView.like.setTextColor(Color.parseColor("#03DAC5"))
+            } else {
+                itemView.like.setTextColor(Color.parseColor("#000000"))
+            }
         }
     }
 

@@ -1,6 +1,6 @@
 package com.example.tutorial
 
-data class PostActivity(
+data class PostView(
     val user: String,
     val description: String,
     val idPhoto: Int,
