@@ -2,13 +2,9 @@ package com.example.tutorial
 
 import android.app.Activity
 import android.app.AlertDialog
-import android.content.DialogInterface
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
-import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.main.activity_post.*
 import kotlinx.android.synthetic.main.activity_recycler_view.*
 
 class SecondActivity : Activity() {
@@ -70,32 +66,14 @@ class SecondActivity : Activity() {
 
     private fun addPost() {
         //Alert dialog
-        this.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Nuevo post añadido", Snackbar.LENGTH_LONG)
-                .setAction("Action", null)
-                .show()
-            adapter.add(
-                PostView(
-                    "Marina", "Probando nuevo post",
-                    "http://lorempixel.com/400/200/sports/1/"
-                )
-            )
-            //showDialog()
+        this.fab.setOnClickListener {
+            showDialog()
         }
     }
-/*
-    private fun showDialog(){
-        AlertDialog.Builder(this)
-            .setTitle("Nuevo post")
-            .setMessage("¿Quieres crear un nuevo post?")
-            .setPositiveButton("Si", DialogInterface.OnClickListener{ dialogInterface: DialogInterface, i: Int ->
-                adapter.add(
-                PostView(
-                    "Marina", "Probando nuevo post",
-                    "http://lorempixel.com/400/200/sports/1/"
-                )
-            )})
-    }*/
+
+    private fun showDialog() {
+        AlertDialog.Builder(this).confirmNewPost(adapter)
+    }
 
     //Clases: LoQueSeaActivity
     //Diseño: activity_lo_que_sea

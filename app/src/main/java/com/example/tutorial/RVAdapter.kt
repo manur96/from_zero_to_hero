@@ -6,10 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import kotlinx.android.synthetic.main.activity_post.*
 import kotlinx.android.synthetic.main.activity_post.view.*
-import kotlinx.android.synthetic.main.activity_post.view.postPhoto
 
 
 class RVAdapter(
@@ -27,8 +24,8 @@ class RVAdapter(
         val itemView =
             LayoutInflater.from(parent.context).inflate(R.layout.activity_post, parent, false)
         return PostViewHolder(itemView,
-            {onLikeClick(postList[it])},
-            {onCommentClick(postList[it])})
+            { onLikeClick(postList[it]) },
+            { onCommentClick(postList[it]) })
     }
 
     override fun getItemCount(): Int = postList.size
@@ -38,7 +35,7 @@ class RVAdapter(
         notifyDataSetChanged()
     }
 
-    fun add(post: PostView){
+    fun add(post: PostView) {
         postList.add(post)
         notifyDataSetChanged()
     }
