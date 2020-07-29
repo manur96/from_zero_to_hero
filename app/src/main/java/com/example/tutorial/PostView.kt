@@ -3,6 +3,6 @@ package com.example.tutorial
 data class PostView(
     val user: String,
     val description: String,
-    val idPhoto: Int,
+    val urlPhoto: String,
     var isLiked: Boolean = false
 )
